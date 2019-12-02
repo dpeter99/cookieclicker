@@ -3,7 +3,10 @@ package com.dpeter99.cookieclicker.model;
 import com.dpeter99.cookieclicker.model.buildings.Cursor;
 import com.dpeter99.cookieclicker.model.buildings.Grandma;
 import com.dpeter99.cookieclicker.util.Observable;
+import com.thoughtworks.xstream.XStream;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.MathContext;
@@ -17,6 +20,8 @@ public class GameModel extends Observable {
     BigDecimal cookiesPerClick =  new BigDecimal("1");
 
     BigDecimal CpS = BigDecimal.ZERO;
+
+
     public BigDecimal getCpS() {
         return CpS;
     }
@@ -97,5 +102,23 @@ public class GameModel extends Observable {
             return true;
         }
         return false;
+    }
+
+    public void SaveToFile(){
+        XStream xstream = new XStream();
+
+        String xml = xstream.toXML(this);
+
+        FileWriter writer = null;
+
+        try {
+            writer = new FileWriter("./save.xml");
+            writer.write(xml);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }

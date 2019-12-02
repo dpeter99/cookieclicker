@@ -10,6 +10,8 @@ import com.dpeter99.cookieclicker.util.Observer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainView{
 
@@ -17,6 +19,8 @@ public class MainView{
     private CookieButton cookieButton;
     private BuildingsList buildingsList;
     private UpgradesPanel upgradesPanel;
+
+    private JMenuBar menubar;
 
     public JPanel getContent() {
         return content;
@@ -26,9 +30,22 @@ public class MainView{
 
     public MainView(GameModel model) {
         this.model = model;
-        //model.registerObserver(this);
-        //this.a.setSize(100,-1);
-        //this.a.setPreferredSize(new Dimension(100,-1));
+
+        menubar = new JMenuBar();
+        JMenuItem save = new JMenuItem("Save");
+        save.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                synchronized (model) {
+                    model.SaveToFile();
+                }
+            }
+        });
+
+        menubar.add(save);
+
+        content.add(save, BorderLayout.NORTH);
+
         content.updateUI();
     }
 

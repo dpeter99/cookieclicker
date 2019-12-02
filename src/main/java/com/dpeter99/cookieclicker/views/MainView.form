@@ -1,49 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.dpeter99.cookieclicker.views.MainView">
-  <grid id="27dc6" binding="content" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="5" left="5" bottom="5" right="5"/>
+  <grid id="865b8" binding="content" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
-      <xy x="20" y="20" width="4143" height="508"/>
+      <xy x="20" y="20" width="950" height="508"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="419f0" layout-manager="BorderLayout" hgap="0" vgap="0">
-        <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
+      <grid id="27dc6" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="5" left="5" bottom="5" right="5"/>
+        <constraints border-constraint="Center"/>
         <properties/>
         <border type="none"/>
         <children>
-          <nested-form id="18994" form-file="com/dpeter99/cookieclicker/components/BuildingsList.form" binding="buildingsList" custom-create="true">
-            <constraints border-constraint="Center"/>
-          </nested-form>
-        </children>
-      </grid>
-      <grid id="48b36" layout-manager="BorderLayout" hgap="0" vgap="0">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-1"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <nested-form id="e994d" form-file="com/dpeter99/cookieclicker/components/CookieButton.form" binding="cookieButton" custom-create="true">
-            <constraints border-constraint="Center"/>
-          </nested-form>
-        </children>
-      </grid>
-      <grid id="61b68" layout-manager="BorderLayout" hgap="0" vgap="0">
-        <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <nested-form id="e10d7" form-file="com/dpeter99/cookieclicker/components/UpgradesPanel.form" binding="upgradesPanel" custom-create="true">
-            <constraints border-constraint="Center"/>
-          </nested-form>
+          <grid id="419f0" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <nested-form id="18994" form-file="com/dpeter99/cookieclicker/components/BuildingsList.form" binding="buildingsList" custom-create="true">
+                <constraints border-constraint="Center"/>
+              </nested-form>
+            </children>
+          </grid>
+          <grid id="48b36" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <nested-form id="e994d" form-file="com/dpeter99/cookieclicker/components/CookieButton.form" binding="cookieButton" custom-create="true">
+                <constraints border-constraint="Center"/>
+              </nested-form>
+            </children>
+          </grid>
+          <grid id="61b68" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <nested-form id="e10d7" form-file="com/dpeter99/cookieclicker/components/UpgradesPanel.form" binding="upgradesPanel" custom-create="true">
+                <constraints border-constraint="Center"/>
+              </nested-form>
+            </children>
+          </grid>
         </children>
       </grid>
     </children>
