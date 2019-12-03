@@ -8,12 +8,23 @@ import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * Singleton class to reference and help use the resources in the game
+ * It helps with the access of the language files and the images
+ *
+ */
 public class Resources {
 
+    /**
+     * The singleton instance that can be accessed
+     */
     public static Resources Instance;
 
     private BufferedImage image;
 
+    /**
+     * Constructor that assigns itself to the Instance static parameter, so it cna be access anywhere
+     */
     public Resources() {
         Instance = this;
 
@@ -24,7 +35,13 @@ public class Resources {
         }
     }
 
-    // get file from classpath, resources folder
+
+    /**
+     * Returns a resource file from the path given
+     *
+     * @param fileName The path to the file including it's name and extension
+     * @return The file
+     */
     public File getFileFromResources(String fileName) {
 
         ClassLoader classLoader = getClass().getClassLoader();
@@ -38,14 +55,33 @@ public class Resources {
 
     }
 
+    /**
+     * Get's a translated string
+     *
+     * @param key The string key
+     * @return The string requested
+     */
     public String getString(String key){
         return ResourceBundle.getBundle("lang/lang", Locale.getDefault()).getString(key);
     }
 
-    public String getFormatedString(String key, Object... args){
+    /**
+     * Returns a string from the languagef iles, formatted with the given arguments
+     *
+     * @param key The string key
+     * @param args The format parameters
+     * @return The formated string
+     */
+    public String getFormattedString(String key, Object... args){
         return String.format(getString(key), args);
     }
 
+    /**
+     * Returns a Icon image by it's id in the icon map
+     *
+     * @param id The ID
+     * @return The image as a BufferedImage
+     */
     public BufferedImage getIconByID(int id){
 
         BufferedImage off_Image =

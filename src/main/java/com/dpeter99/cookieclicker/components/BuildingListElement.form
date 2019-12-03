@@ -50,6 +50,7 @@
               </grid>
             </constraints>
             <properties>
+              <icon value="images/money.png"/>
               <text value="500"/>
             </properties>
           </component>

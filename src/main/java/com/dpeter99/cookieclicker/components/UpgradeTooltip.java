@@ -8,6 +8,10 @@ import javax.swing.plaf.ComponentUI;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/**
+ * The component the tooltip displays for the upgrades
+ * This component has nice border and data about the upgrade
+ */
 public class UpgradeTooltip {
     private JPanel icon;
     private JLabel cost;
@@ -20,7 +24,11 @@ public class UpgradeTooltip {
     private JPanel content;
     private JLabel description;
 
+    Upgrade upgrade;
+
     public UpgradeTooltip(Upgrade upgrade) {
+        this.upgrade = upgrade;
+
         cost.setText(upgrade.getCost().toString());
         name.setText(upgrade.getDisplayName());
         description.setText(upgrade.getDisplayDescription());
@@ -28,6 +36,6 @@ public class UpgradeTooltip {
 
 
     private void createUIComponents() {
-       icon = new Icon(0);
+       icon = new Icon(upgrade.getIconID());
     }
 }

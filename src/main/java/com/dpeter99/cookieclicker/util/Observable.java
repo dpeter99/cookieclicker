@@ -1,6 +1,5 @@
 package com.dpeter99.cookieclicker.util;
 
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -8,14 +7,14 @@ import java.util.Set;
 public class Observable {
 
     // this is the object we will be synchronizing on ("the monitor")
-    @XStreamOmitField()
     private final Object MONITOR = new Object();
 
-    @XStreamOmitField()
     private Set<Observer> mObservers;
 
     /**
      * This method adds a new Observer - it will be notified when Observable changes
+     *
+     * @param observer the observer to be added to the notification list
      */
     public void registerObserver(Observer observer) {
         if (observer == null) return;
@@ -32,6 +31,8 @@ public class Observable {
 
     /**
      * This method removes an Observer - it will no longer be notified when Observable changes
+     *
+     * @param observer the observer to be removed to the notification list
      */
     public void unregisterObserver(Observer observer) {
         if (observer == null) return;

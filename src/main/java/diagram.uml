@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="560.75" y="96.0">com.dpeter99.cookieclicker.components.BuildingListElement</node>
+    <node x="189.0" y="329.0">com.dpeter99.cookieclicker.components.BuildingsList</node>
+    <node x="875.0" y="329.0">com.dpeter99.cookieclicker.model.buildings.CursorTest</node>
+    <node x="853.75" y="96.0">com.dpeter99.cookieclicker.components.UpgradeButton</node>
+    <node x="166.75" y="258.0">com.dpeter99.cookieclicker.model.buildings.Grandma.GrandmaUpgrade</node>
+    <node x="1178.25" y="182.0">com.dpeter99.cookieclicker.components.CookieButton.BigCookie</node>
+    <node x="1.25" y="96.0">com.dpeter99.cookieclicker.model.GameModel</node>
+    <node x="388.75" y="182.0">com.dpeter99.cookieclicker.model.GameModelTest</node>
+    <node x="784.2391304347825" y="182.0">com.dpeter99.cookieclicker.components.UpgradeButton.UpgradeIcon</node>
+    <node x="9.75" y="258.0">com.dpeter99.cookieclicker.model.buildings.Cursor.CursorUpgrade</node>
+    <node x="1167.75" y="96.0">com.dpeter99.cookieclicker.components.CookieButton</node>
+    <node x="0.0" y="329.0">com.dpeter99.cookieclicker.components.UpgradeTooltip</node>
+    <node x="330.75" y="258.0">com.dpeter99.cookieclicker.model.GameModelTest.TestUpgrade</node>
+    <node x="581.75" y="182.0">com.dpeter99.cookieclicker.components.BuildingListElement.BuyBtnClicked</node>
+    <node x="0.0" y="182.0">com.dpeter99.cookieclicker.model.buildings.Cursor</node>
+    <node x="1010.75" y="96.0">com.dpeter99.cookieclicker.components.UpgradesPanel</node>
+    <node x="154.0" y="400.0">com.dpeter99.cookieclicker.views.MainView</node>
+    <node x="0.0" y="400.0">com.dpeter99.cookieclicker.Resources</node>
+    <node x="133.75" y="182.0">com.dpeter99.cookieclicker.model.buildings.Grandma</node>
+    <node x="248.75" y="182.0">com.dpeter99.cookieclicker.model.Upgrade</node>
+    <node x="546.0" y="329.0">com.dpeter99.cookieclicker.Application</node>
+    <node x="130.25" y="96.0">com.dpeter99.cookieclicker.model.Building</node>
+    <node x="1036.0" y="329.0">com.dpeter99.cookieclicker.views.MainWindow</node>
+    <node x="371.0" y="329.0">com.dpeter99.cookieclicker.components.FancyTooltip</node>
+    <node x="714.0" y="329.0">com.dpeter99.cookieclicker.GameThread</node>
+    <node x="473.75" y="258.0">com.dpeter99.cookieclicker.model.GameModelTest.TestBuilding</node>
+    <node x="735.25" y="0.0">com.dpeter99.cookieclicker.util.Observer</node>
+    <node x="759.75" y="96.0">com.dpeter99.cookieclicker.components.Icon</node>
+    <node x="97.75" y="0.0">com.dpeter99.cookieclicker.util.Observable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.dpeter99.cookieclicker.model.buildings.Grandma.GrandmaUpgrade" target="com.dpeter99.cookieclicker.model.Upgrade">
+      <point x="36.0" y="-13.0" />
+      <point x="274.75" y="238.0" />
+      <point x="296.25" y="238.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.components.CookieButton.BigCookie" target="com.dpeter99.cookieclicker.components.CookieButton">
+      <point x="0.0" y="-13.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.buildings.Grandma" target="com.dpeter99.cookieclicker.model.Building">
+      <point x="0.0" y="-13.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.buildings.Cursor" target="com.dpeter99.cookieclicker.model.Building">
+      <point x="0.0" y="-13.0" />
+      <point x="44.0" y="162.0" />
+      <point x="147.25" y="162.0" />
+      <point x="-34.0" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.buildings.Cursor.CursorUpgrade" target="com.dpeter99.cookieclicker.model.buildings.Cursor">
+      <point x="-34.25" y="-13.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.components.BuildingListElement" target="com.dpeter99.cookieclicker.util.Observer">
+      <point x="0.0" y="-13.0" />
+      <point x="650.25" y="76.0" />
+      <point x="777.75" y="76.0" />
+      <point x="-8.5" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.components.UpgradeButton" target="com.dpeter99.cookieclicker.util.Observer">
+      <point x="0.0" y="-13.0" />
+      <point x="922.25" y="76.0" />
+      <point x="794.75" y="76.0" />
+      <point x="8.5" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.components.UpgradeButton.UpgradeIcon" target="com.dpeter99.cookieclicker.components.Icon">
+      <point x="-30.75" y="-13.0" />
+      <point x="814.9891304347825" y="162.0" />
+      <point x="796.75" y="162.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.components.CookieButton" target="com.dpeter99.cookieclicker.util.Observer">
+      <point x="0.0" y="-13.0" />
+      <point x="1232.75" y="56.0" />
+      <point x="828.75" y="56.0" />
+      <point x="42.5" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.components.UpgradesPanel" target="com.dpeter99.cookieclicker.util.Observer">
+      <point x="0.0" y="-13.0" />
+      <point x="1079.25" y="66.0" />
+      <point x="811.75" y="66.0" />
+      <point x="25.5" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.components.BuildingListElement.BuyBtnClicked" target="com.dpeter99.cookieclicker.components.BuildingListElement">
+      <point x="0.0" y="-13.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.GameModelTest.TestUpgrade" target="com.dpeter99.cookieclicker.model.Upgrade">
+      <point x="-30.75" y="-13.0" />
+      <point x="361.5" y="238.0" />
+      <point x="327.9166666666667" y="238.0" />
+      <point x="31.666666666666686" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.GameModelTest.TestBuilding" target="com.dpeter99.cookieclicker.model.GameModelTest">
+      <point x="-32.5" y="-13.0" />
+      <point x="506.25" y="238.0" />
+      <point x="491.5" y="238.0" />
+      <point x="34.25" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.GameModelTest.TestUpgrade" target="com.dpeter99.cookieclicker.model.GameModelTest">
+      <point x="30.75" y="-13.0" />
+      <point x="-34.25" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.GameModelTest.TestBuilding" target="com.dpeter99.cookieclicker.model.Building">
+      <point x="32.5" y="-13.0" />
+      <point x="571.25" y="142.0" />
+      <point x="215.25" y="142.0" />
+      <point x="34.0" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.Upgrade" target="com.dpeter99.cookieclicker.util.Observable">
+      <point x="-23.75" y="-13.0" />
+      <point x="272.5" y="152.0" />
+      <point x="325.4891304347825" y="152.0" />
+      <point x="325.4891304347825" y="46.0" />
+      <point x="194.41666666666663" y="46.0" />
+      <point x="38.66666666666663" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.Upgrade" target="com.dpeter99.cookieclicker.util.Observer">
+      <point x="23.75" y="-13.0" />
+      <point x="320.0" y="162.0" />
+      <point x="336.4891304347825" y="162.0" />
+      <point x="336.4891304347825" y="66.0" />
+      <point x="760.75" y="66.0" />
+      <point x="-25.5" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.Building" target="com.dpeter99.cookieclicker.util.Observer">
+      <point x="25.5" y="-13.0" />
+      <point x="206.75" y="56.0" />
+      <point x="743.75" y="56.0" />
+      <point x="-42.5" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.buildings.Grandma.GrandmaUpgrade" target="com.dpeter99.cookieclicker.model.buildings.Grandma">
+      <point x="-36.0" y="-13.0" />
+      <point x="202.75" y="228.0" />
+      <point x="181.25" y="228.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.buildings.Cursor.CursorUpgrade" target="com.dpeter99.cookieclicker.model.Upgrade">
+      <point x="34.25" y="-13.0" />
+      <point x="112.5" y="238.0" />
+      <point x="264.58333333333337" y="238.0" />
+      <point x="-31.666666666666657" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.Building" target="com.dpeter99.cookieclicker.util.Observable">
+      <point x="-25.5" y="-13.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.model.GameModel" target="com.dpeter99.cookieclicker.util.Observable">
+      <point x="0.0" y="-13.0" />
+      <point x="55.75" y="76.0" />
+      <point x="117.08333333333337" y="76.0" />
+      <point x="-38.66666666666666" y="13.0" />
+    </edge>
+    <edge source="com.dpeter99.cookieclicker.components.UpgradeButton.UpgradeIcon" target="com.dpeter99.cookieclicker.components.UpgradeButton">
+      <point x="30.75" y="-13.0" />
+      <point x="876.4891304347825" y="162.0" />
+      <point x="922.25" y="162.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="649.0" y="213.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

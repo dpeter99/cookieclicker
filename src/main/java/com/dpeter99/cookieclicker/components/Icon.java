@@ -7,9 +7,13 @@ import javax.swing.plaf.ComponentUI;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-class Icon extends JPanel {
 
-    private BufferedImage image;
+/**
+ * Used to display an icon from ("images/icon.png") by it's ID
+ */
+public class Icon extends JPanel {
+
+    protected BufferedImage image;
 
     public Icon(int id) {
         super();
@@ -47,12 +51,6 @@ class Icon extends JPanel {
      */
     @Override
     public void paintComponent(Graphics g) {
-        Graphics2D g2 = (Graphics2D)g;
-
-        // int rule = AlphaComposite.CLEAR;
-        //int rule = AlphaComposite.SRC_OVER;
-        //Composite comp = AlphaComposite.getInstance(rule , 1 );
-        // g2.setComposite(comp );
         g.drawImage(image, 0,0,this.getWidth(),this.getHeight(),0,0,image.getWidth(),image.getHeight(),null,null);
     }
 

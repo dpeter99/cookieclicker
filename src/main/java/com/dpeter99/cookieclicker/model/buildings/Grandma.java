@@ -5,6 +5,8 @@ import com.dpeter99.cookieclicker.model.Building;
 import com.dpeter99.cookieclicker.model.GameModel;
 import com.dpeter99.cookieclicker.model.Upgrade;
 
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
 import java.awt.*;
 import java.math.BigDecimal;
 
@@ -47,6 +49,20 @@ public class Grandma extends Building {
     public boolean isAvailable() {
         return true;
     }
+
+    @Override
+    public JsonObject writeObject() {
+        JsonObjectBuilder value = baseWriteObject();
+
+
+        return value.build();
+    }
+
+    @Override
+    public void readObject(JsonObject a) {
+        baseReadObject(a);
+    }
+
 
     @Override
     public BigDecimal getCpS() {
@@ -97,6 +113,13 @@ public class Grandma extends Building {
         @Override
         public String getRegistryName() {
             return REGISTRY_NAME;
+        }
+
+        @Override
+        public void readObject(JsonObject a) {
+            super.readObject(a);
+            if(bought)
+                onBuy();
         }
     }
 }

@@ -1,5 +1,6 @@
 plugins {
     id 'application'
+    id 'jacoco'
 }
 mainClassName = 'com.dpeter99.cookieclicker.Application'
 
@@ -13,9 +14,21 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
 
     // https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream
-    compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.11.1'
+    //compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.11.1'
 
+    // https://mvnrepository.com/artifact/javax.json/javax.json-api
+    compile group: 'javax.json', name: 'javax.json-api', version: '1.1.4'
+
+    // https://mvnrepository.com/artifact/org.glassfish/javax.json
+    compile group: 'com.owlike', name: 'genson', version: '1.6'
+
+
+}
+
+test {
+    useJUnitPlatform()
 }

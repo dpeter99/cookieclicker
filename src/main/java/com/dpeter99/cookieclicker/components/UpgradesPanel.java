@@ -11,6 +11,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The panel holding all the upgrades in a flow panel
+ *
+ * This is responsible for displaying the currently available upgrades.
+ */
 public class UpgradesPanel implements Runnable , Observer {
     public JPanel getContent() {
         return content;
@@ -26,7 +31,14 @@ public class UpgradesPanel implements Runnable , Observer {
     GameModel game;
 
 
-
+    /**
+     * Constructor for this class
+     * It makes a list of the currently available upgrades.
+     *
+     * It also registers itself as a Observer for the <code>building</code> so it can update the display
+     *
+     * @param game The game we are representing
+     */
     public UpgradesPanel(GameModel game) {
         this.game = game;
         game.registerObserver(this);
@@ -35,7 +47,7 @@ public class UpgradesPanel implements Runnable , Observer {
         buyPanel.setMaximumSize(buyPanel.getPreferredSize());
 
         for (Upgrade b : game.getUpgrades().values()) {
-            if(b.isAwailable()) {
+            if(b.isAwailable() && !b.isBought()) {
                 UpgradeButton icon = new UpgradeButton(this, b);
                 mappedList.put(b,icon);
                 buyPanel.add(icon.getContent());
@@ -55,6 +67,10 @@ public class UpgradesPanel implements Runnable , Observer {
         buyPanel.setPreferredSize(new Dimension(400,-1));
     }
 
+    /**
+     * Removes the UpgradeButton form the list
+     * @param i The button to remove
+     */
     public void buyItem(UpgradeButton i){
         buyPanel.remove(i.getContent());
         mappedList.remove(i);
@@ -78,9 +94,9 @@ public class UpgradesPanel implements Runnable , Observer {
     }
 
     @Override
-    public void onObservableChanged() {
+    public synchronized void onObservableChanged() {
         for (Upgrade b : game.getUpgrades().values()) {
-            if(b.isAwailable() && !mappedList.containsKey(b)) {
+            if(b.isAwailable() && !b.isBought() && !mappedList.containsKey(b)) {
                 UpgradeButton icon = new UpgradeButton(this, b);
                 mappedList.put(b,icon);
                 buyPanel.add(icon.getContent());

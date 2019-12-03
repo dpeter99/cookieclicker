@@ -13,7 +13,7 @@ public class Application {
     public static void main(String[] args) {
         Resources r = new Resources();
 
-        GameModel game = new GameModel();
+        GameModel game = GameModel.openFromFile("save.json");
         //game.AddBuilding("Cursor",2);
 
 
@@ -21,8 +21,11 @@ public class Application {
 
         thread.start();
 
-        MainWindow w = new MainWindow(game);
-        w.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        synchronized (game){
+            MainWindow w = new MainWindow(game);
+            w.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        }
+
     }
 
 }

@@ -1,21 +1,21 @@
 package com.dpeter99.cookieclicker.components;
 
 import com.dpeter99.cookieclicker.Resources;
-import com.dpeter99.cookieclicker.model.Building;
-import com.dpeter99.cookieclicker.model.GameModel;
 import com.dpeter99.cookieclicker.model.Upgrade;
 import com.dpeter99.cookieclicker.util.Observer;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
+/**
+ * The upgrade button that is displayed for each upgrade in the list.
+ * It consist of a beveled center that is inside the root of the component
+ * Inside that is a custom Icon component that can display the icon and uses the correct tooltip
+ */
 public class UpgradeButton implements Observer, Runnable {
     //private final GameModel game;
 
@@ -25,7 +25,7 @@ public class UpgradeButton implements Observer, Runnable {
 
     private JPanel content;
     private JPanel center;
-    private Icon icon;
+    private UpgradeIcon icon;
 
     Color bkg;
 
@@ -33,6 +33,12 @@ public class UpgradeButton implements Observer, Runnable {
 
     Upgrade upgrade;
 
+    /**
+     * The constructor for the upgrade button it cheats and sets up all the connections.
+     *
+     * @param upgradesPanel The panel this belongs to
+     * @param b The upgrade this represents
+     */
     public UpgradeButton(UpgradesPanel upgradesPanel, Upgrade b) {
         this.upgrade = b;
         this.parent = upgradesPanel;
@@ -55,7 +61,7 @@ public class UpgradeButton implements Observer, Runnable {
              */
             @Override
             public void mouseReleased(MouseEvent e) {
-                if( upgradesPanel.game.BuyUpgrade(upgrade.getRegistryName())) {
+                if( upgradesPanel.game.buyUpgrade(upgrade.getRegistryName())) {
                     parent.buyItem(UpgradeButton.this);
                 }
             }
@@ -68,7 +74,7 @@ public class UpgradeButton implements Observer, Runnable {
     }
 
     private void createUIComponents() {
-        icon = new Icon(upgrade.getIconID());
+        icon = new UpgradeIcon(upgrade.getIconID());
     }
 
     @Override
@@ -104,14 +110,14 @@ public class UpgradeButton implements Observer, Runnable {
         icon.repaint();
     }
 
-    class Icon extends JPanel{
+    /**
+     * This is the image that gets displayed
+     * It also uses the FancyTooltip as it's tooltip
+     */
+    protected class UpgradeIcon extends Icon{
 
-        private BufferedImage image;
-
-        public Icon(int id) {
-            super();
-            image = Resources.Instance.getIconByID(id);
-
+        public UpgradeIcon(int id) {
+            super(id);
         }
 
         /**
@@ -142,16 +148,12 @@ public class UpgradeButton implements Observer, Runnable {
          * @see #paint
          * @see ComponentUI
          */
+
         @Override
         public void paintComponent(Graphics g) {
-            Graphics2D g2 = (Graphics2D)g;
-
-            // int rule = AlphaComposite.CLEAR;
-            //int rule = AlphaComposite.SRC_OVER;
-            //Composite comp = AlphaComposite.getInstance(rule , 1 );
-           // g2.setComposite(comp );
             g.drawImage(image, 0,0,this.getWidth(),this.getHeight(),0,0,image.getWidth(),image.getHeight(),bkg,null);
         }
+
 
         /**
          * Returns the instance of <code>JToolTip</code> that should be used

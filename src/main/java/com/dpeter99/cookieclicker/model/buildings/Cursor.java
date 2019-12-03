@@ -5,9 +5,16 @@ import com.dpeter99.cookieclicker.model.Building;
 import com.dpeter99.cookieclicker.model.GameModel;
 import com.dpeter99.cookieclicker.model.Upgrade;
 
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
 import java.math.BigDecimal;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Cursor  extends Building {
+
+    final String REGISTRY_NAME = "buildings.cursor";
 
     public Cursor(GameModel game) {
         super(game);
@@ -19,7 +26,7 @@ public class Cursor  extends Building {
 
     BigDecimal multiplyer = new BigDecimal("0");
 
-    final String REGISTRY_NAME = "buildings.cursor";
+    List<CursorUpgrade> upgrades = new LinkedList<>();
 
     @Override
     public String getRegistryName() {
@@ -52,12 +59,27 @@ public class Cursor  extends Building {
     }
 
     @Override
+    public JsonObject writeObject() {
+
+        JsonObjectBuilder value = baseWriteObject();
+
+
+        return value.build();
+    }
+
+    @Override
+    public void readObject(JsonObject a) {
+        baseReadObject(a);
+    }
+
+    @Override
     public BigDecimal getCpS() {
         BigDecimal a = BigDecimal.valueOf(0.5).multiply(BigDecimal.valueOf(count));
         if(!multiplyer.equals(BigDecimal.ZERO))
                 a = a.multiply(multiplyer);
         return a;
     }
+
 
 
     public class CursorUpgrade extends Upgrade{
@@ -71,6 +93,9 @@ public class Cursor  extends Building {
 
         public CursorUpgrade(GameModel g, String id, BigDecimal cost, int iconID, int treshold) {
             super(g,cost);
+
+            upgrades.add(this);
+
             this.iconID = iconID;
             this.REGISTRY_NAME = MakeID(Cursor.this,id);
             this.treshold = treshold;
@@ -82,6 +107,8 @@ public class Cursor  extends Building {
         public void onBuy() {
             multiplyer = multiplyer.add(BigDecimal.valueOf(2));
         }
+
+        public BigDecimal getMultiplyer() {return BigDecimal.valueOf(2);}
 
         @Override
         public boolean isAwailable() {
@@ -100,6 +127,13 @@ public class Cursor  extends Building {
         @Override
         public String getRegistryName() {
             return REGISTRY_NAME;
+        }
+
+        @Override
+        public void readObject(JsonObject a) {
+            super.readObject(a);
+            if(bought)
+            onBuy();
         }
     }
 }

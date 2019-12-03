@@ -10,11 +10,14 @@ import javax.swing.plaf.ComponentUI;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
+/**
+ * Holds the cookie button and the cookie count display
+ *
+ * The button is a subclass of this that uses graphic drawing to display the image.
+ */
 public class CookieButton implements Runnable, Observer {
 
     private BufferedImage image;
@@ -30,6 +33,14 @@ public class CookieButton implements Runnable, Observer {
     private JLabel cookies;
     private JLabel production;
 
+    /**
+     * This makes the cookie button
+     * And adds the event listener to it to record the clicks
+     *
+     * It also registers itself as a Observer for the <code>game</code> so it can update the display
+     *
+     * @param game The game we are displaying
+     */
     public CookieButton(GameModel game) {
         this.game = game;
         game.registerObserver(this);
@@ -45,7 +56,7 @@ public class CookieButton implements Runnable, Observer {
 
 
         cookies.setText("0");
-        production.setText(Resources.Instance.getFormatedString("production.text", game.getCpS().toString()));
+        production.setText(Resources.Instance.getFormattedString("production.text", game.getCpS().toString()));
 
         cookieButton.setPreferredSize(new Dimension(200,200));
         cookieButton.addMouseListener(new MouseAdapter() {
@@ -57,7 +68,7 @@ public class CookieButton implements Runnable, Observer {
             @Override
             public void mouseReleased(MouseEvent e) {
                 super.mouseReleased(e);
-                game.ClickCookie();
+                game.clickCookie();
             }
         });
         cookieButton.setToolTipText("asd");
@@ -70,8 +81,8 @@ public class CookieButton implements Runnable, Observer {
 
     @Override
     public void onObservableChanged() {
-        cookies.setText(game.GetCookiesDisplayCount());
-        production.setText(Resources.Instance.getFormatedString("production.text", game.getCpS().toString()));
+        cookies.setText(game.getCookiesDisplayCount());
+        production.setText(Resources.Instance.getFormattedString("production.text", game.getCpS().toString()));
         SwingUtilities.invokeLater(this);
     }
 
@@ -92,6 +103,11 @@ public class CookieButton implements Runnable, Observer {
     }
 
 
+    /**
+     * The cookie button that the player clicks to gain cookies manually
+     *
+     * This is a JComponent implementation that does custom drawing to display the image
+     */
     class BigCookie extends JComponent{
 
         /**

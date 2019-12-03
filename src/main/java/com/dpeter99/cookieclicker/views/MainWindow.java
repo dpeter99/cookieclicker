@@ -6,25 +6,17 @@ import com.dpeter99.cookieclicker.util.Observer;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * The main window of the application
+ * This is what hosts the MainView Component that contains all sub-parts
+ */
 public class MainWindow extends JFrame  {
 
     MainView main;
 
     GameModel model;
 
-    /**
-     * Constructs a new frame that is initially invisible.
-     * <p>
-     * This constructor sets the component's locale property to the value
-     * returned by <code>JComponent.getDefaultLocale</code>.
-     *
-     * @throws HeadlessException if GraphicsEnvironment.isHeadless()
-     *                           returns true.
-     * @see GraphicsEnvironment#isHeadless
-     * @see Component#setSize
-     * @see Component#setVisible
-     * @see JComponent#getDefaultLocale
-     */
+
     public MainWindow(GameModel m) throws HeadlessException {
         this.model = m;
 

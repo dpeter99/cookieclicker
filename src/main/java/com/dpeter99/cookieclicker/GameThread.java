@@ -2,6 +2,9 @@ package com.dpeter99.cookieclicker;
 
 import com.dpeter99.cookieclicker.model.GameModel;
 
+/**
+ * The thread that updates the game in a continuous loop.
+ */
 public class GameThread extends Thread {
 
     GameModel model;

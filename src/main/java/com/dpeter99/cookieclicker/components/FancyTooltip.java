@@ -5,6 +5,10 @@ import com.dpeter99.cookieclicker.model.Upgrade;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Used as the tooltip for the upgrades
+ * It displays the icon, name cost description, etc. of the upgrades
+ */
 public class FancyTooltip extends JToolTip {
 
     JComponent content;
